@@ -1,9 +1,5 @@
-FROM richarvey/nginx-php-fpm:3.1.6
+FROM webdevops/php-nginx:8.2
 
-ENV WEBROOT=/var/www/html/public
-ENV RUN_SCRIPTS=1
-
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf   
-
-CMD ["/start.sh"]
+COPY . /app
+RUN chmod +x /app/start.sh
+CMD ["/app/start.sh"]
