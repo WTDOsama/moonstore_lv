@@ -4,6 +4,6 @@ ENV WEBROOT=/var/www/html/public
 ENV RUN_SCRIPTS=1
 
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf   # <-- NEW
+COPY nginx.conf /etc/nginx/conf.d/default.conf   
 
 CMD ["/start.sh"]
