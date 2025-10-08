@@ -1,9 +1,9 @@
 services:
   - type: web
     name: moonstore
-    env: php
-    buildCommand: "composer install --no-dev && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force"
-    startCommand: "php artisan serve --host=0.0.0.0 --port=10000"
+    env: docker
+    buildCommand: ""
+    startCommand: ""
     envVars:
       - key: APP_KEY
         generateValue: true
@@ -21,5 +21,4 @@ services:
         value: "lv_moonstore"
       - key: DB_USERNAME
         value: "root"
-      - key: DB_PASSWORD
-        value: ""     # ← replace with your phpMyAdmin password
+      # DB_PASSWORD is completely removed (empty password)
